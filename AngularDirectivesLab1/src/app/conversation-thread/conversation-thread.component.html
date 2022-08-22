@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row" *ngFor="let senderMessage of senderMessages">
+    <div class="col-9 p-3">
+      <span
+        class="badge"
+        [ngClass]="senderMessage.sender.isOnline ? 'bg-primary' : 'bg-secondary'"
+        >{{senderMessage.sender.badge}}</span
+      >
+       <div class="col-8 p-3 border rounded-5">
+      <span [ngClass]="senderMessage.sender.isOnline ? 'fw-bold' : 'fw-light'">
+        {{senderMessage.text}}</span
+      >
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" *ngFor="let userMessage of userMessages">
+    <div class="col-3 p-3"></div>
+    <div class="col-9 p-3">
+      <app-user-message [message]="userMessage"></app-user-message>
+    </div>
+  </div>
+</div>
